@@ -33,9 +33,9 @@ class App extends React.Component {
             <div className="App">
 
                 {(loadedFromFile) ? (
-                    <h4>Error: {error.message} - Data loaded from file </h4>
+                    <h4>Error: {error.message} - Data are loaded from file </h4>
                 ) : (
-                    <h4>Connection successful - Data loaded from server</h4>
+                    <h4>Connection successful - Data are loaded from server</h4>
                 )}
 
                 <Routes>
