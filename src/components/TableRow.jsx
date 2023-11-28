@@ -1,5 +1,6 @@
 import React from "react";
-import img from './../assets/img/notes.png'
+import imgNotes from './../assets/img/notes.png';
+import imgDelete from './../assets/img/delete.svg';
 import {useNavigate} from "react-router-dom";
 
 function TableRow({ship, onDelete}) {
@@ -22,8 +23,8 @@ function TableRow({ship, onDelete}) {
             <td>{ship.status}</td>
             <td>{ship.consignee}</td>
             <td>
-                <button onClick={handleClick}><img src={img} alt="notes"/></button>
-                <button onClick={handleDelete} > x </button>
+                <button onClick={handleClick}><img src={imgNotes} alt="notes"/></button>
+                <button onClick={handleDelete}><img src={imgDelete} alt="delete"/></button>
             </td>
         </tr>
     );
