@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('../../public/css/SuisseIntl-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.header {
+  padding: 10px 0;
+  border-bottom: solid 1px #000;
+  font-family: 'SuisseIntl', sans-serif;
+}
+
+.logo__img {
+  width: 297px;
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.title {
+  justify-self: center;
+}
+
+.title__name {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.title__author {
+  font-size: 18px;
+}
+
+.task {
+  font-size: 20px;
+}
+
+.task {
+  justify-self: right;
+}

@@ -1,6 +1,6 @@
 import React from "react";
-import imgNotes from './../assets/img/notes.png';
-import imgDelete from './../assets/img/delete.svg';
+import imgNotes from './../assets/images/notes.png';
+import imgDelete from './../assets/images/delete.svg';
 import {useNavigate} from "react-router-dom";
 
 function TableRow({ship, onDelete}) {

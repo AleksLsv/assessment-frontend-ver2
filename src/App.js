@@ -1,4 +1,5 @@
 import './App.css';
+import Header from './components/Header';
 import React from 'react';
 import {connect} from 'react-redux';
 import {addShipment, deleteShipment, fetchShipmentsData} from './actions/actionCreators';
@@ -30,7 +31,11 @@ class App extends React.Component {
         }
 
         return (
+          
+
             <div className="App">
+
+            
 
                 {(loadedFromFile) ? (
                     <h4>Error: {error.message} - Data are loaded from file </h4>
