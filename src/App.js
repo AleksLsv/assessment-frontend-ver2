@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/Header';
+// import Header from './components/Header';
 import React from 'react';
 import {connect} from 'react-redux';
 import {addShipment, deleteShipment, fetchShipmentsData} from './actions/actionCreators';
@@ -34,6 +34,7 @@ class App extends React.Component {
           
 
             <div className="App">
+              <div className='container'>
 
             
 
@@ -50,6 +51,7 @@ class App extends React.Component {
                                                               onAddShipment={this.props.addShipment}/>}/>
                 </Routes>
             </div>
+          </div>
         );
     }
 }

@@ -14,7 +14,7 @@ a {
 }
 
 button {
-  columns: inherit;
+  /* columns: inherit; */
   font-size: inherit;
   background-color: transparent;
   border: none;
@@ -28,6 +28,10 @@ body {
   color: #151618;
   line-height: normal;
   font-weight: 400;
+}
+
+ul{
+  list-style: none;
 }
 
 

@@ -5,6 +5,19 @@
   font-style: normal;
 }
 
+ul {
+  list-style: circle;
+  margin-bottom: 20px;
+}
+
+ul:last-child{
+  margin-bottom: 0;
+}
+
+p{
+  margin-bottom: 10px;
+}
+
 
 .header {
   padding: 10px 0;
@@ -20,6 +33,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  position: relative;
+  /* z-index: 1; */
 }
 
 .title {
@@ -37,10 +52,39 @@
   font-size: 18px;
 }
 
-.task {
+.task_btn {
   font-size: 20px;
+  justify-self: right;
+  position: relative;
 }
 
+
+
+
 .task {
-  justify-self: right;
+
+  display: block;
+  position: absolute;
+  font-size: 16px;
+  top: 85px;
+  /* z-index: 2; */
+  background-color: white;
+  max-width: 800px;
+  right: 0;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  /* transform: translateX(0%); */
 }
+
+.task.hidden {
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+}
+
