@@ -1,8 +1,8 @@
-.details{
+.details {
   position: relative;
 }
 
-.details_btn_back{
+.details_btn_back {
   position: absolute;
   right: 0;
   top: 10px;
@@ -17,44 +17,6 @@
 h2 {
   font-size: 24px;
   margin: 30px 10px 30px;
-}
-
-.form{
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-}
-
-.form_list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.form__item {
-  flex-basis: 500px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-}
-
-.form_btn{
-  font-size: 20px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: aquamarine;
-  font-weight: 700;
-  margin-right: 30px;
-}
-
-
-
-
-
-.formField {
-  display: flex;
-  flex-direction: column;
 }
 
 label {
@@ -73,31 +35,31 @@ input {
 }
 
 
-
-.button {
-  position: absolute;
-  top: 2%;
-  right: 2%;
-  background-color: burlywood;
-  border-radius: 3px;
+.form {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
-.button2 {
-  position: relative;
-  height: 30px;
-  width: 100px;
-  left: 1.5%;
-  background-color: lightpink;
-  border-radius: 3px;
-  font-weight: bold;
+.form_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.button3 {
-  position: relative;
-  height: 30px;
-  width: 100px;
-  right: 80%;
+.form__list_item {
+  flex-basis: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.form_btn {
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
   background-color: aquamarine;
-  border-radius: 3px;
-  font-weight: bold;
+  font-weight: 700;
+  margin-right: 30px;
 }
