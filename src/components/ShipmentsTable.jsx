@@ -19,10 +19,10 @@ function ShipmentsTable(props) {
         <div className='loaded__data-got'>
           {(loadedFromFile) ? (
             <p className={s.fromFile}>
-              Error: {error.message} - Data are loaded from file </p>
+              Error: {error.message} - Data loaded from a file </p>
           ) : (
             <p className={s.fromServer}>
-              Connection successful - Data are loaded from server</p>
+              Connection successful - Data loaded from the server</p>
           )}
 
 

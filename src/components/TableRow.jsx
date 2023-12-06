@@ -2,6 +2,9 @@ import React from "react";
 import imgNotes from './../assets/images/notes.png';
 import imgDelete from './../assets/images/delete.svg';
 import {useNavigate} from "react-router-dom";
+import s from './Table.module.css';
+
+
 
 function TableRow({ship, onDelete}) {
 
@@ -23,8 +26,10 @@ function TableRow({ship, onDelete}) {
             <td>{ship.status}</td>
             <td>{ship.consignee}</td>
             <td>
-                <button className="notes-btn" onClick={handleClick}><img src={imgNotes} alt="notes"/></button>
-                <button className="delete-btn" onClick={handleDelete}><img src={imgDelete} alt="delete"/></button>
+              <div className={s.table_btns}>
+                <button onClick={handleClick}><img src={imgNotes} alt="notes"/></button>
+                <button onClick={handleDelete}><img src={imgDelete} alt="delete"/></button>
+              </div>
             </td>
         </tr>
     );
