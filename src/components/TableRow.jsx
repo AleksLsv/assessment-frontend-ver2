@@ -23,8 +23,8 @@ function TableRow({ship, onDelete}) {
             <td>{ship.status}</td>
             <td>{ship.consignee}</td>
             <td>
-                <button onClick={handleClick}><img src={imgNotes} alt="notes"/></button>
-                <button onClick={handleDelete}><img src={imgDelete} alt="delete"/></button>
+                <button className="notes-btn" onClick={handleClick}><img src={imgNotes} alt="notes"/></button>
+                <button className="delete-btn" onClick={handleDelete}><img src={imgDelete} alt="delete"/></button>
             </td>
         </tr>
     );
