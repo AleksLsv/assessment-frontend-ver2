@@ -1,9 +1,9 @@
 import './App.css';
-// import Header from './components/Header';
+import Header from './components/Header';
 import React from 'react';
-import {connect} from 'react-redux';
-import {addShipment, deleteShipment, fetchShipmentsData} from './actions/actionCreators';
-import {Route, Routes} from "react-router-dom";
+import { connect } from 'react-redux';
+import { addShipment, deleteShipment, fetchShipmentsData } from './actions/actionCreators';
+import { Route, Routes } from "react-router-dom";
 import ShipmentsTable from "./components/ShipmentsTable";
 import DetailsForm from "./components/DetailsForm";
 import Preloader from "./components/common/Preloader";
@@ -12,64 +12,56 @@ import Preloader from "./components/common/Preloader";
 class App extends React.Component {
 
 
-    componentDidMount() {
-        this.props.fetchShipmentsData();
-    }
+  componentDidMount() {
+    this.props.fetchShipmentsData();
+  }
 
 
-    render() {
-        const {error, loading, shipments, loadedFromFile} = this.props;
+  render() {
+    const { loading, ...restProps } = this.props;
 
-        if (loading) {
-            return <Preloader/>
-        }
+    return (
 
-        if (error && !loadedFromFile) {
-            return <div>
-                <h4>Error: {error.message} </h4>
-            </div>;
-        }
+      <div className="app-wrapper">
+        <Routes>
+          <Route path="/" element={<Header />} />
+        </Routes>
 
-        return (
-          
+        <div className='container'>
 
-            <div className="App">
-              <div className='container'>
+          {(loading) ? (
+            <Preloader />
+          ) : (
+            <Routes>
+              
+              <Route path="/" element={<ShipmentsTable {...restProps}
+                onDelete={this.props.deleteShipment} />} />
 
-            
+              <Route path="/form" element={<DetailsForm onDelete={this.props.deleteShipment}
+                onAddShipment={this.props.addShipment} />} />
 
-                {(loadedFromFile) ? (
-                    <h4>Error: {error.message} - Data are loaded from file </h4>
-                ) : (
-                    <h4>Connection successful - Data are loaded from server</h4>
-                )}
-
-                <Routes>
-                    <Route path="/" element={<ShipmentsTable data={shipments}
-                                                             onDelete={this.props.deleteShipment}/>}/>
-                    <Route path="/form" element={<DetailsForm onDelete={this.props.deleteShipment}
-                                                              onAddShipment={this.props.addShipment}/>}/>
-                </Routes>
-            </div>
-          </div>
-        );
-    }
+            </Routes>
+          )}
+        </div>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    const {error, loading, shipments, loadedFromFile} = state.shipments;
-    return {
-        error,
-        loading,
-        shipments,
-        loadedFromFile,
-    };
+  const { error, loading, shipments, loadedFromFile } = state.shipmentsR;
+  return {
+    error,
+    loading,
+    shipments,
+    loadedFromFile,
+  };
 }
 
 export default connect(mapStateToProps, {
-    fetchShipmentsData,
-    deleteShipment,
-    addShipment
+  fetchShipmentsData,
+  deleteShipment,
+  addShipment
 })(App);
 
 

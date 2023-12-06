@@ -3,7 +3,7 @@ import logo from "../assets/images/kuehne-nagel-logo-blue.png";
 import s from "./Header.module.css"
 
 function Header() {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   const toggleActive = () => {
     setIsActive(!isActive);

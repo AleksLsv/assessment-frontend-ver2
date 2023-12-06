@@ -38,6 +38,7 @@ input {
 .form {
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
+  margin-top: 50px;
 }
 
 .form_list {

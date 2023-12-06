@@ -6,7 +6,7 @@ import anyReducer from "./any-reducer";
 
 
 let reducers = combineReducers({
-    shipments: shipmentsReducer,
+    shipmentsR: shipmentsReducer,
     another: anyReducer
 });
 

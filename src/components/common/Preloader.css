@@ -1,0 +1,15 @@
+.preloader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  flex-basis: 100px;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.preloader p{
+  font-size: 36px;
+  font-weight: 500;
+  color: red;
+}
