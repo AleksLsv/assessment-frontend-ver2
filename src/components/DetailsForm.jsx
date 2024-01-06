@@ -53,21 +53,21 @@ function DetailsForm({ onAddShipment, onDelete }) {
         <h2>SHIPMENT DETAILS</h2>
         <ul className={styles.form_list}>
           <li className={styles.form__list_item} key="orderNo">
-            <label htmlFor="orderNo">Order No</label>
+            <label htmlFor="orderNo">order No</label>
             <input type="text" id="orderNo" value={formData.orderNo}
               onChange={(e) => handleChange(e, "orderNo")}>
             </input>
           </li>
 
           <li className={styles.form__list_item} key="date">
-            <label htmlFor="date">Date</label>
+            <label htmlFor="date">date</label>
             <input type="text" id="date" value={formData.date}
               onChange={(e) => handleChange(e, "date")}>
             </input>
           </li>
 
           <li className={styles.form__list_item} key="customer">
-            <label htmlFor="customer">Customer</label>
+            <label htmlFor="customer">customer</label>
             <input type="text" id="customer" value={formData.customer}
               onChange={(e) => handleChange(e, "customer")}>
             </input>
@@ -81,14 +81,14 @@ function DetailsForm({ onAddShipment, onDelete }) {
           </li>
 
           <li className={styles.form__list_item} key="consignee">
-            <label htmlFor="consignee">Consignee</label>
+            <label htmlFor="consignee">consignee</label>
             <input type="text" id="consignee" value={formData.consignee}
               onChange={(e) => handleChange(e, "consignee")}>
             </input>
           </li>
 
           <li className={styles.form__list_item} key="status">
-            <label htmlFor="status">Status</label>
+            <label htmlFor="status">status</label>
             <input type="text" id="status" value={formData.status}
               onChange={(e) => handleChange(e, "status")}>
             </input>
