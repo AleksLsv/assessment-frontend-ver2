@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer'
 import React from 'react';
 import { connect } from 'react-redux';
 import { addShipment, deleteShipment, fetchShipmentsData } from './actions/actionCreators';
@@ -23,26 +24,34 @@ class App extends React.Component {
     return (
 
       <div className="app-wrapper">
+          <Routes>
+            <Route path="/" element={<Header />} />
+          </Routes>
+
+        <main className='main'>
+          <div className='container'>
+
+            {(loading) ? (
+              <Preloader />
+            ) : (
+              <Routes>
+
+                <Route path="/" element={<ShipmentsTable {...restProps}
+                  onDelete={this.props.deleteShipment} />} />
+
+                <Route path="/form" element={<DetailsForm onDelete={this.props.deleteShipment}
+                  onAddShipment={this.props.addShipment} />} />
+
+              </Routes>
+            )}
+            
+          </div>
+        </main>
+
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/" element={<Footer />} />
         </Routes>
 
-        <div className='container'>
-
-          {(loading) ? (
-            <Preloader />
-          ) : (
-            <Routes>
-              
-              <Route path="/" element={<ShipmentsTable {...restProps}
-                onDelete={this.props.deleteShipment} />} />
-
-              <Route path="/form" element={<DetailsForm onDelete={this.props.deleteShipment}
-                onAddShipment={this.props.addShipment} />} />
-
-            </Routes>
-          )}
-        </div>
       </div>
     );
   }

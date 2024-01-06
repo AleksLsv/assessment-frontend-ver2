@@ -11,7 +11,7 @@ function Header() {
 
   return (
 
-    <header className={s.header}>
+  <header className={s.header}>
       <div className="container">
         <div className={s.header__inner}>
           <img className={s.logo__img} src={logo} alt="Logo of Kuehne+Nagel"></img>
