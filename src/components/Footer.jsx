@@ -4,7 +4,7 @@ import s from "./Footer.module.css"
 function Footer() {
   return (
     <footer className={s.footer}>
-        <p> &copy; Aleksandr Lissovski 2024</p>
+        <p> &copy; Aleksandr Lissovski 2023 - 2024</p>
     </footer>
   );
 

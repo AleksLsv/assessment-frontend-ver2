@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
@@ -10,60 +10,31 @@ function DetailsForm({ onAddShipment, onDelete }) {
   const { state } = useLocation();
   const { ship } = state || {};
 
-  const [formData, setFormData] = useState({
-    orderNo: '',
-    date: '',
-    customer: '',
-    trackingNo: '',
-    consignee: '',
-    status: ''
-  });
-
-  useEffect(() => {
-    setFormData(
-      !ship
-        ? {
-          orderNo: '',
-          date: '',
-          customer: '',
-          trackingNo: '',
-          consignee: '',
-          status: ''
-        }
-        : {
-          orderNo: ship.orderNo || '',
-          date: ship.date || '',
-          customer: ship.customer || '',
-          trackingNo: ship.trackingNo || '',
-          consignee: ship.consignee || '',
-          status: ship.status || ''
-        }
-    );
-  }, [ship]);
-
-
-  // const [formData, setFormData] = useState({
-  //   orderNo: ship.orderNo,
-  //   date: ship.date,
-  //   customer: ship.customer,
-  //   trackingNo: ship.trackingNo,
-  //   consignee: ship.consignee,
-  //   status: ship.status
-  // });
-
-
+  const [formData, setFormData] = useState(
+    !ship
+      ? {
+        orderNo: '',
+        date: '',
+        customer: '',
+        trackingNo: '',
+        consignee: '',
+        status: ''
+      }
+      : {
+        orderNo: ship.orderNo,
+        date: ship.date,
+        customer: ship.customer,
+        trackingNo: ship.trackingNo,
+        consignee: ship.consignee,
+        status: ship.status
+      }
+  );
 
 
   const handleChange = (e, field) => {
     setFormData({ ...formData, [field]: e.currentTarget.value });
   };
 
-
-  // const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   navigate('/');
-  // };
 
   const onUpdate = (e) => {
     onDelete(ship.orderNo);
@@ -93,6 +64,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
           <li className={styles.form__list_item} key="orderNo">
             <label htmlFor="orderNo">order No</label>
             <input type="text" id="orderNo" value={formData.orderNo}
+              placeholder="XX-xxxxxx-xxxxxxxx-xxxxxxx"
               onChange={(e) => handleChange(e, "orderNo")}>
             </input>
           </li>
@@ -100,6 +72,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
           <li className={styles.form__list_item} key="date">
             <label htmlFor="date">date</label>
             <input type="text" id="date" value={formData.date}
+              placeholder="mm/dd/yyyy"
               onChange={(e) => handleChange(e, "date")}>
             </input>
           </li>
@@ -107,6 +80,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
           <li className={styles.form__list_item} key="customer">
             <label htmlFor="customer">customer</label>
             <input type="text" id="customer" value={formData.customer}
+              placeholder="company name"
               onChange={(e) => handleChange(e, "customer")}>
             </input>
           </li>
@@ -114,6 +88,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
           <li className={styles.form__list_item} key="trackingNo">
             <label htmlFor="trackingNo">tracking No</label>
             <input type="text" id="trackingNo" value={formData.trackingNo}
+              placeholder="XX-xxxxxx-xxxxxxxx-xxxxxxx"
               onChange={(e) => handleChange(e, "trackingNo")}>
             </input>
           </li>
@@ -121,6 +96,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
           <li className={styles.form__list_item} key="consignee">
             <label htmlFor="consignee">consignee</label>
             <input type="text" id="consignee" value={formData.consignee}
+              placeholder="company name"
               onChange={(e) => handleChange(e, "consignee")}>
             </input>
           </li>
@@ -128,6 +104,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
           <li className={styles.form__list_item} key="status">
             <label htmlFor="status">status</label>
             <input type="text" id="status" value={formData.status}
+              placeholder="'Shipped, Delivered or In Transit'"
               onChange={(e) => handleChange(e, "status")}>
             </input>
           </li>
