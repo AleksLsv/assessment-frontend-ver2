@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Table.module.css';
 import TableRow from "./TableRow";
+import { useNavigate } from "react-router-dom";
 
 function ShipmentsTable(props) {
 
@@ -9,9 +10,20 @@ function ShipmentsTable(props) {
   const rows = shipments
     .map((ship) => <TableRow key={ship.orderNo} ship={ship} onDelete={props.onDelete} />);
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/form');
+  };
+
 
   return (
     <div className={s.loaded}>
+
+      <botton className="add_data" onClick={handleClick}>
+        Add new data
+      </botton>
+
 
       {(error && !loadedFromFile) ? (
         <p className={s.errorNoData}>Error: {error.message} </p>

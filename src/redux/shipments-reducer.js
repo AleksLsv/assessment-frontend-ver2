@@ -39,10 +39,10 @@ function shipmentsReducer(state = initialState, action) {
         case AppActionType.DELETE_SHIPMENT:
             return {
                 ...state, shipments: state.shipments.filter(ship => ship.orderNo !== action.orderNo)
-            }
+            };
         case AppActionType.ADD_SHIPMENT:
             return {
-                ...state, shipments: [...state.shipments, action.payload]
+              ...state, shipments: [action.payload, ...state.shipments]
             }
 
 

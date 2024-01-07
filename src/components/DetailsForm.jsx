@@ -1,20 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 function DetailsForm({ onAddShipment, onDelete }) {
+  const navigate = useNavigate();
   const { state } = useLocation();
-  const { ship } = state;
+  const { ship } = state || {};
 
   const [formData, setFormData] = useState({
-    orderNo: ship.orderNo,
-    date: ship.date,
-    customer: ship.customer,
-    trackingNo: ship.trackingNo,
-    consignee: ship.consignee,
-    status: ship.status
+    orderNo: '',
+    date: '',
+    customer: '',
+    trackingNo: '',
+    consignee: '',
+    status: ''
   });
+
+  useEffect(() => {
+    if (!ship) {
+      setFormData({
+        orderNo: '',
+        date: '',
+        customer: '',
+        trackingNo: '',
+        consignee: '',
+        status: ''
+      });
+    } else {
+      setFormData({
+        orderNo: ship.orderNo || '',
+        date: ship.date || '',
+        customer: ship.customer || '',
+        trackingNo: ship.trackingNo || '',
+        consignee: ship.consignee || '',
+        status: ship.status || ''
+      });
+    }
+  }, [ship]);
+
+
+
+  // const [formData, setFormData] = useState({
+  //   orderNo: ship.orderNo,
+  //   date: ship.date,
+  //   customer: ship.customer,
+  //   trackingNo: ship.trackingNo,
+  //   consignee: ship.consignee,
+  //   status: ship.status
+  // });
+
+
 
 
   const handleChange = (e, field) => {
@@ -22,31 +60,32 @@ function DetailsForm({ onAddShipment, onDelete }) {
   };
 
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/');
-  };
+  // const handleClick = () => {
+  //   navigate('/');
+  // };
 
   const onUpdate = (e) => {
     onDelete(ship.orderNo);
     onAddShipment(formData);
-    alert(`Data for order No ${formData["orderNo"]} has been updated. To return to the main table, click the button <<Back>>. You will see the changes at the bottom of the table.`);
+    alert(`Data has been updated. See the changes in the first row of the table.`);
     e.preventDefault();
+    navigate('/');
   };
 
   const onAdd = (e) => {
     onAddShipment(formData);
-    alert(`New data with order No ${formData["orderNo"]} has been added. To return to the main table, click the button <<Back>>. You will see the changes at the bottom of the table.`);
+    alert(`New data has been added. See the changes in the first row of the table.`);
     e.preventDefault();
+    navigate('/');
   };
 
 
   return (
     <div className={styles.details}>
-      <botton className={styles.details_btn_back} onClick={handleClick}>
-        back to Table
-      </botton>
+
+      <Link to="/" className={styles.details_link_back}>back to Table</Link>
 
 
       <form className={styles.form}>
@@ -96,8 +135,12 @@ function DetailsForm({ onAddShipment, onDelete }) {
 
         </ul>
 
-        <button className={styles.form_btn} type="submit" onClick={onUpdate}> Update data</button>
-        <button className={styles.form_btn} type="submit" onClick={onAdd}> Add data</button>
+
+        {(ship) ? (
+          <button className={styles.form_btn} type="submit" onClick={onUpdate}> Update data</button>
+        ) : (
+          <button className={styles.form_btn} type="submit" onClick={onAdd}> Add data</button>
+        )}
       </form>
 
     </div>

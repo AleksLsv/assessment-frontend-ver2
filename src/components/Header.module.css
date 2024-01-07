@@ -22,8 +22,11 @@ p{
 .header {
   padding: 10px 0;
   border-bottom: solid 1px #000;
+  background-color: ghostwhite;
   font-family: 'SuisseIntl', sans-serif;
   margin-bottom: 30px;
+  position: sticky;
+  top: 0;
 }
 
 .logo__img {
