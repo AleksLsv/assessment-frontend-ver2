@@ -5,16 +5,16 @@
   font-style: normal;
 }
 
-ul {
+.task ul {
   list-style: circle;
   margin-bottom: 20px;
 }
 
-ul:last-child{
+.task ul:last-child{
   margin-bottom: 0;
 }
 
-p{
+.task p{
   margin-bottom: 10px;
 }
 

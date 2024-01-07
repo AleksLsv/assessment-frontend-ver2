@@ -20,27 +20,26 @@ function DetailsForm({ onAddShipment, onDelete }) {
   });
 
   useEffect(() => {
-    if (!ship) {
-      setFormData({
-        orderNo: '',
-        date: '',
-        customer: '',
-        trackingNo: '',
-        consignee: '',
-        status: ''
-      });
-    } else {
-      setFormData({
-        orderNo: ship.orderNo || '',
-        date: ship.date || '',
-        customer: ship.customer || '',
-        trackingNo: ship.trackingNo || '',
-        consignee: ship.consignee || '',
-        status: ship.status || ''
-      });
-    }
+    setFormData(
+      !ship
+        ? {
+          orderNo: '',
+          date: '',
+          customer: '',
+          trackingNo: '',
+          consignee: '',
+          status: ''
+        }
+        : {
+          orderNo: ship.orderNo || '',
+          date: ship.date || '',
+          customer: ship.customer || '',
+          trackingNo: ship.trackingNo || '',
+          consignee: ship.consignee || '',
+          status: ship.status || ''
+        }
+    );
   }, [ship]);
-
 
 
   // const [formData, setFormData] = useState({
@@ -85,7 +84,7 @@ function DetailsForm({ onAddShipment, onDelete }) {
   return (
     <div className={styles.details}>
 
-      <Link to="/" className={styles.details_link_back}>back to Table</Link>
+      <Link to="/" className={styles.details_link_back}>back to table</Link>
 
 
       <form className={styles.form}>
