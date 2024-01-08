@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/images/kuehne-nagel-logo-blue.png";
+import close from "../assets/images/close.svg";
 import s from "./Header.module.css"
 
 function Header() {
@@ -11,7 +12,7 @@ function Header() {
 
   return (
 
-  <header className={s.header}>
+    <header className={s.header}>
       <div className="container">
         <div className={s.header__inner}>
           <img className={s.logo__img} src={logo} alt="Logo of Kuehne+Nagel"></img>
@@ -23,6 +24,10 @@ function Header() {
             Task
           </button>
           <div className={`${s.task} ${isActive ? s.hidden : ''}`}>
+            <button className={s.task__close_btn} onClick={toggleActive}>
+              <img src={close} alt="close"/>
+            </button>
+
             <p>Shipments CRUD page:
 
             </p>

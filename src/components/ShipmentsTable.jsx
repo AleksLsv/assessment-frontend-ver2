@@ -17,7 +17,7 @@ function ShipmentsTable(props) {
         <p className={s.errorNoData}>Error: {error.message} </p>
       ) : (
         <div className="loaded__Data">
-          <div className={s.loadedTextAndBotton}>
+          <div>
 
             {(loadedFromFile) ? (
               <p className={s.fromFile}>
@@ -26,26 +26,29 @@ function ShipmentsTable(props) {
               <p className={s.fromServer}>
                 Connection successful - Data loaded from the server</p>
             )}
-            <Link to="/form" className={s.add_data}>add new data</Link>
           </div>
 
+          <div className={s.link_and_table}>
+            <Link to="/form" className={s.add_data}>add new data</Link>
+            <table id="my-table" className={s.table}>
+              <thead>
+                <tr>
+                  <th>ORDER NO</th>
+                  <th>DELIVERY DAY</th>
+                  <th>CUSTOMER</th>
+                  <th>TRACKING NO</th>
+                  <th>STATUS</th>
+                  <th>CONSIGNEE</th>
+                  <th>
 
-          <table id="my-table" className={s.table}>
-            <thead>
-              <tr>
-                <th>ORDER NO</th>
-                <th>DELIVERY DAY</th>
-                <th>CUSTOMER</th>
-                <th>TRACKING NO</th>
-                <th>STATUS</th>
-                <th>CONSIGNEE</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows}
-            </tbody>
-          </table>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows}
+              </tbody>
+            </table>
+          </div>
 
         </div>
       )}

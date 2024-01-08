@@ -10,11 +10,15 @@
   margin-bottom: 20px;
 }
 
-.task ul:last-child{
+.task li{
+  margin-bottom: 5px;
+}
+
+.task ul:last-child {
   margin-bottom: 0;
 }
 
-.task p{
+.task p {
   margin-bottom: 10px;
 }
 
@@ -27,6 +31,7 @@
   margin-bottom: 30px;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .logo__img {
@@ -93,3 +98,8 @@
   overflow: hidden;
 }
 
+.task__close_btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
