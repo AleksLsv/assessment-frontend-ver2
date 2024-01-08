@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/assessment-frontend-vers2/static/css/main.fcc46439.css",
+    "main.js": "/assessment-frontend-vers2/static/js/main.cf74c51a.js",
+    "static/js/787.d2399f49.chunk.js": "/assessment-frontend-vers2/static/js/787.d2399f49.chunk.js",
+    "static/media/SuisseIntl-Regular.ttf": "/assessment-frontend-vers2/static/media/SuisseIntl-Regular.d1a6a5b0cd76d384f42f.ttf",
+    "static/media/Preloader.gif": "/assessment-frontend-vers2/static/media/Preloader.20a21d3c5d14bc614403.gif",
+    "index.html": "/assessment-frontend-vers2/index.html",
+    "static/media/close.svg": "/assessment-frontend-vers2/static/media/close.eb3a670aa2ecf8817a796158566bb902.svg",
+    "static/media/delete.svg": "/assessment-frontend-vers2/static/media/delete.93437e9cd22c554b766a3225d6d19a9c.svg",
+    "main.fcc46439.css.map": "/assessment-frontend-vers2/static/css/main.fcc46439.css.map",
+    "main.cf74c51a.js.map": "/assessment-frontend-vers2/static/js/main.cf74c51a.js.map",
+    "787.d2399f49.chunk.js.map": "/assessment-frontend-vers2/static/js/787.d2399f49.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcc46439.css",
+    "static/js/main.cf74c51a.js"
+  ]
+}
